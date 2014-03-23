@@ -9,7 +9,7 @@ header ("Location: ../index.php");
 }else{
 
       	$asm = new AGI_AsteriskManager();
-          if($asm->connect('localhost','admin','m4nag3rt3ts')){
+          if($asm->connect('localhost','admin','managerpwd')){
                 $peer = $asm->command("core show channels");
 		preg_match('/(.*) active call/',$peer['data'],$res);
 	        //print_r($res);

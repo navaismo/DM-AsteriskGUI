@@ -14,7 +14,7 @@ switch($id){
 
 	case 'dp':
 		$asm = new AGI_AsteriskManager();
-		if($asm->connect('localhost','admin','m4nag3rt3ts')){
+		if($asm->connect('localhost','admin','managerpwd')){
 		        $dp = $asm->command("dialplan reload");
 		        sleep(1);
 		}
@@ -26,7 +26,7 @@ switch($id){
 	
 	case 'sip';
 		$asm = new AGI_AsteriskManager();
-                if($asm->connect('localhost','admin','m4nag3rt3ts')){
+                if($asm->connect('localhost','admin','managerpwd')){
                         $dp = $asm->command("sip reload");
                         sleep(1);
                	}
@@ -37,7 +37,7 @@ switch($id){
 
 	case 'iax';
 		$asm = new AGI_AsteriskManager();
-                if($asm->connect('localhost','admin','m4nag3rt3ts')){
+                if($asm->connect('localhost','admin','managerpwd')){
                         $dp = $asm->command("iax2 reload");
                         sleep(1);
                	}
@@ -48,7 +48,7 @@ switch($id){
 
 	case 'dahdi';
 		$asm = new AGI_AsteriskManager();
-                if($asm->connect('localhost','admin','m4nag3rt3ts')){
+                if($asm->connect('localhost','admin','managerpwd')){
                         $dp = $asm->command("dahdi restart");
                         sleep(1);
                	}

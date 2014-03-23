@@ -105,7 +105,7 @@ file_put_contents('/etc/asterisk/'.$file, $text);
 
 
 $asm = new AGI_AsteriskManager();
-if($asm->connect('localhost','admin','m4nag3rt3ts')){
+if($asm->connect('localhost','admin','managerpwd')){
         $peer = $asm->command("sip reload");
         sleep(1);
         $peer = $asm->command("dialplan reload");

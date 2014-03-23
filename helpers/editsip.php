@@ -40,7 +40,7 @@ mysql_query($sql1) or die(mysql_error());
 
 
 $asm = new AGI_AsteriskManager();
-if($asm->connect('localhost','admin','m4nag3rt3ts')){
+if($asm->connect('localhost','admin','managerpwd')){
         $peer = $asm->command("sip reload");
         sleep(1);
 }

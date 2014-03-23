@@ -10,7 +10,7 @@ $func=$_GET['func'];
 require_once('/var/lib/asterisk/agi-bin/phpagi/phpagi-asmanager.php');
 
         $asm = new AGI_AsteriskManager();
-          if($asm->connect('localhost','admin','m4nag3rt3ts')){
+          if($asm->connect('localhost','admin','managerpwd')){
                 $peer = $asm->command("core show function ".$func);
                 $test = preg_replace("/Privilege: Command/s",'',$peer['data']);
                 $test1 = preg_replace("/\\n/s",'<br>',$test);

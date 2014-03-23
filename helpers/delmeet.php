@@ -28,7 +28,7 @@ $text = str_replace('same => n,Hangup() ;hangup for conf # '.${confno}.'', '', $
 file_put_contents('/etc/asterisk/'.$file, $text);
 
 $asm = new AGI_AsteriskManager();
-if($asm->connect('localhost','admin','m4nag3rt3ts')){
+if($asm->connect('localhost','admin','managerpwd')){
 	$dp = $asm->command("dialplan reload");
         sleep(1);
 }
