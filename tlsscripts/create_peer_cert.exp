@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+
+
+if {[llength $argv] != 4} {
+	puts "Need 4 Arguments:\n 1.- DNS or IPADDRES\n 2.-Organization Name\n 3.-PeerName\n4.-PASSWORD"
+
+}
+
+set DNS [lrange $argv 0 0]
+set NAME [lrange $argv 1 1]
+set PEER [lrange $argv 2 2]
+set PWD [lrange $argv 3 3]
+
+spawn ../tlsscripts/ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt -k /etc/asterisk/keys/ca.key -C $DNS -O "$NAME" -d /etc/asterisk/keys -o $PEER
+
+
+expect "?Enter pass phrase for /etc/asterisk/keys/ca.key:"
+send -- "$PWD\r"
+
+expect eof

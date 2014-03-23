@@ -1,0 +1,27 @@
+#!/usr/bin/expect -f
+
+
+if {[llength $argv] != 3} {
+	puts "Need 3 Arguments:\n 1.- DNS or IPADDRES\n 2.-Organization Name\n 3.-Password\n"
+
+}
+
+set DNS [lrange $argv 0 0]
+set NAME [lrange $argv 1 1]
+set PWD [lrange $argv 2 2]
+
+spawn ../tlsscripts/ast_tls_cert -C $DNS -O "$NAME" -d /etc/asterisk/keys
+
+expect "?Enter pass phrase for /etc/asterisk/keys/ca.key:"
+send -- "$PWD\r"
+
+expect "?Enter pass phrase for /etc/asterisk/keys/ca.key:"
+send -- "$PWD\r"
+
+expect "?Enter pass phrase for /etc/asterisk/keys/ca.key:"
+send -- "$PWD\r"
+
+expect "?Enter pass phrase for /etc/asterisk/keys/ca.key:"
+send -- "$PWD\r"
+
+expect eof
