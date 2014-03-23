@@ -1,7 +1,7 @@
 DM-AsteriskGUI
 ==============
 
-Digital-Merge Asterisk GUI
+Digital-Merge Asterisk GUI using the **Muhammad Usman's Charisma Template** at http://usman.it/free-responsive-admin-template/
 
 This project create a Web GUI to administrate the DIGIUM's Asterisk PBX using RealTime Static(MySQL) for the most of configurations.
 
